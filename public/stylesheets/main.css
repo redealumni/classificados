@@ -1,0 +1,106 @@
+/* SCAFFOLD */
+
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18pt;
+  text-align: left;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* Customizações */
+
+.ad_title {
+	font-size:   130%;
+	font-weight: bold;
+}
+
+.ad_date {
+  color:grey;
+  font-size:70%;
+  text-align:right;
+}
+
+.ad {
+  background-color:aliceBlue;
+  margin:0.5em 0;
+  padding:0.5em 1em;
+}
+
+.ad_header {
+  margin: 0 0 0.5em 0;
+}
+
+.ad_info {
+font-size:85%;
+text-align:right;
+}
+
+#hd h1 {
+border:medium none;
+font-size:300%;
+font-weight:bold;
+margin:1em 0;
+text-align:center;
+text-shadow:2px 2px lightgrey;
+}
+
+h1 {
+border-bottom:2px dotted;
+font-size:160%;
+font-weight:bold;
+margin:0.5em 0;
+}
+
+h2 {
+border-bottom:1px dotted;
+font-size:130%;
+font-weight:bold;
+margin:0.5em 0;
+}
