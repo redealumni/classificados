@@ -2,7 +2,7 @@
     <div class="ad_header yui-ge">
       <div class="ad_title yui-u first"><%=h ad.title %></div>
       <div class="ad_date yui-u">
-        <%=h ad.created_at %>
+        <%=h time_ago_in_words(ad.created_at) %> atrás
       </div>
     </div>
     <div class="ad_content  yui-ge">
