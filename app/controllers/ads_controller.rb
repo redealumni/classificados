@@ -5,7 +5,7 @@ class AdsController < ApplicationController
     
     @title = "Classificados Recentes"
     
-    @ads = Ad.find(:all, :order => "created_at DESC")
+    @ads = Ad.find(:all, :conditions => ["created_at > ?", 30.days.ago], :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
