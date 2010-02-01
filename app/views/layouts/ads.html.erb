@@ -5,13 +5,35 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Ads: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/reset-fonts-grids/reset-fonts-grids.css">
+  <%= stylesheet_link_tag 'main' %>
 </head>
 <body>
+<div id="doc" class="yui-t1">
+  <div id="hd">
+    <h1>Classificados Online</h1>
+  </div>
+  <div id="bd">
+    
+    <div id="yui-main">
+      <div class="yui-b">
+        <p style="color: green"><%= flash[:notice] %></p>
 
-<p style="color: green"><%= flash[:notice] %></p>
+        <%= yield %>
+      </div>
+      
+    </div>
+        
+    <div class="yui-b">
+      <%= link_to '+ Novo Classificado', new_ad_path %>
+    </div>
 
-<%= yield %>
+  </div>
+  <div id="ft">
+    
+  </div>
+</div>
+
 
 </body>
 </html>

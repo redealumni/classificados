@@ -1,28 +1,26 @@
-<h1>Classificados Online</h1>
 
-<%= link_to 'Novo Classificado', new_ad_path %>
-
-
+<h1> Entradas Recentes </h1>
 
 <% @ads.each do |ad| %>
   <div class="ad">
-    <div class="ad_header">
-      <h2><%=h ad.title %></h2>
-      <div class="ad_date">
+    <div class="ad_header yui-ge">
+      <div class="ad_title yui-u first"><%=h ad.title %></div>
+      <div class="ad_date yui-u">
         <%=h ad.created_at %>
       </div>
     </div>
-    <div class="ad_body">
-      <%=h ad.body %>
+    <div class="ad_content  yui-ge">
+      <div class="ad_body yui-u first">
+        <%=h ad.body %><br/>
+        <%= link_to 'Edit', edit_ad_path(ad) %> 
+        <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+      <div class="ad_info yui-u">
+        <%=h ad.email %><br/>
+        <%=h ad.phone %>
+      </div>      
     </div>
-    <div class="ad_info">
-      <%=h ad.email %>
-      <%=h ad.phone %>
-      <%= link_to 'Show', ad %>
-      <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
-    </div>    
   </div>
-
 <% end %>
 
 <br />
