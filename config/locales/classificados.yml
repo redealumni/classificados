@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      ad: "Classificado" # o model do active record
+      user: 
+      comment: Comentário
+    attributes:
+      ad: 
+        body: "corpo" # a tradução do atributo do model
+        title: título
+        kind: tipo
+        phone: telefone
+        email: e-mail

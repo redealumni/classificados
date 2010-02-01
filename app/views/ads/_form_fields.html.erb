@@ -1,21 +1,21 @@
   <%= f.error_messages %>
   <p>
-    <%= f.label :kind %><br />
+    <%= f.label :kind, t("activerecord.attributes.ad.kind").titlecase %><br />
     <%= f.select :kind, Ad::KINDS.values.sort, :default => Ad::KINDS[:buy] %>
   </p>
   <p>
-    <%= f.label :title %><br />
+    <%= f.label :title, t("activerecord.attributes.ad.title").titlecase %><br />
     <%= f.text_field :title %>
   </p>
   <p>
-    <%= f.label :body %><br />
+    <%= f.label :body, t("activerecord.attributes.ad.body").titlecase %><br />
     <%= f.text_area :body, :size => "40x8" %>
   </p>
   <p>
-     <%= f.label :email %><br />
+     <%= f.label :email, t("activerecord.attributes.ad.email").titlecase %><br />
      <%= f.text_field :email %>
    </p>
    <p>
-     <%= f.label :phone %><br />
+     <%= f.label :phone, t("activerecord.attributes.ad.phone").titlecase %><br />
      <%= f.text_field :phone %>
    </p>
