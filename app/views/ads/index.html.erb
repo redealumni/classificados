@@ -1,26 +1,29 @@
-<h1>Listing ads</h1>
+<h1>Classificados Online</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Email</th>
-    <th>Phone</th>
-  </tr>
+<%= link_to 'Novo Classificado', new_ad_path %>
+
+
 
 <% @ads.each do |ad| %>
-  <tr>
-    <td><%=h ad.title %></td>
-    <td><%=h ad.body %></td>
-    <td><%=h ad.email %></td>
-    <td><%=h ad.phone %></td>
-    <td><%= link_to 'Show', ad %></td>
-    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-    <td><%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <div class="ad">
+    <div class="ad_header">
+      <h2><%=h ad.title %></h2>
+      <div class="ad_date">
+        <%=h ad.created_at %>
+      </div>
+    </div>
+    <div class="ad_body">
+      <%=h ad.body %>
+    </div>
+    <div class="ad_info">
+      <%=h ad.email %>
+      <%=h ad.phone %>
+      <%= link_to 'Show', ad %>
+      <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
+    </div>    
+  </div>
+
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New ad', new_ad_path %>
