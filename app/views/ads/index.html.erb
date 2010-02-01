@@ -1,24 +1,13 @@
-
 <h1> Entradas Recentes </h1>
 
+<% unless @selling.empty? %><h2> Venda </h2> <% end -%>
+<%= render :partial => 'ad', :collection => @selling %>
 
-<h2> Venda </h2>
+<% unless @buying.empty? %><h2> Compra </h2><% end -%>
+<%= render :partial => 'ad', :collection => @buying %>
 
-<% @selling.each do |ad| %>
-<%= render :partial => 'ad', :object => ad %>
-<% end %>
-
-<h2> Compra </h2>
-
-<% @buying.each do |ad| %>
-<%= render :partial => 'ad', :object => ad %>
-<% end %>
-
-<h2> Troca </h2>
-
-<% @exchanging.each do |ad| %>
-<%= render :partial => 'ad', :object => ad %>
-<% end %>
+<% unless @exchanging.empty? %><h2> Troca </h2><% end -%>
+<%= render :partial => 'ad', :collection => @exchanging %>
 
 <br />
 
