@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @ad.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @ad.body %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @ad.email %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @ad.phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_ad_path(@ad) %> |
+<%= link_to 'Back', ads_path %>
