@@ -2,7 +2,10 @@ class AdsController < ApplicationController
   # GET /ads
   # GET /ads.xml
   def index
-    @ads = Ad.all
+    
+    @title = "Classificados Recentes"
+    
+    @ads = Ad.find(:all, :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
