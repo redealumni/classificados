@@ -1,26 +1,23 @@
 
 <h1> Entradas Recentes </h1>
 
-<% @ads.each do |ad| %>
-  <div class="ad">
-    <div class="ad_header yui-ge">
-      <div class="ad_title yui-u first"><%=h ad.title %></div>
-      <div class="ad_date yui-u">
-        <%=h ad.created_at %>
-      </div>
-    </div>
-    <div class="ad_content  yui-ge">
-      <div class="ad_body yui-u first">
-        <%=h ad.body %><br/>
-        <%= link_to 'Edit', edit_ad_path(ad) %> 
-        <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
-      </div>
-      <div class="ad_info yui-u">
-        <%=h ad.email %><br/>
-        <%=h ad.phone %>
-      </div>      
-    </div>
-  </div>
+
+<h2> Venda </h2>
+
+<% @selling.each do |ad| %>
+<%= render :partial => 'ad', :object => ad %>
+<% end %>
+
+<h2> Compra </h2>
+
+<% @buying.each do |ad| %>
+<%= render :partial => 'ad', :object => ad %>
+<% end %>
+
+<h2> Troca </h2>
+
+<% @exchanging.each do |ad| %>
+<%= render :partial => 'ad', :object => ad %>
 <% end %>
 
 <br />

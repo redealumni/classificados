@@ -5,7 +5,9 @@ class AdsController < ApplicationController
     
     @title = "Classificados Recentes"
     
-    @ads = Ad.find(:all, :conditions => ["created_at > ?", 30.days.ago], :order => "created_at DESC")
+    @selling = Ad.find(:all, :conditions => ["created_at > ? AND kind = ?", 30.days.ago, Ad::KINDS[:sell] ], :order => "created_at DESC")
+    @buying = Ad.find(:all, :conditions => ["created_at > ? AND kind = ?", 30.days.ago, Ad::KINDS[:buy] ], :order => "created_at DESC")
+    @exchanging = Ad.find(:all, :conditions => ["created_at > ? AND kind = ?", 30.days.ago, Ad::KINDS[:exchange] ], :order => "created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

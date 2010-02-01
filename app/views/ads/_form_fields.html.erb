@@ -1,7 +1,7 @@
   <%= f.error_messages %>
   <p>
     <%= f.label :kind %><br />
-    <%= f.select :kind, ["venda", "compra", "troca"] %>
+    <%= f.select :kind, Ad::KINDS.values.sort, :default => Ad::KINDS[:buy] %>
   </p>
   <p>
     <%= f.label :title %><br />
