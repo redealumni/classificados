@@ -5,4 +5,6 @@ class Ad < ActiveRecord::Base
   named_scope :created_after, lambda{ |time| {:conditions => ["created_at > ?", time ]} }
   named_scope :of_kind, lambda{ |kind| {:conditions => ["kind = ?", kind ]} }
   
+  has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
 end
