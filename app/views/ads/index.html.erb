@@ -1,4 +1,4 @@
-<h1> Entradas Recentes </h1>
+<h1> <%=h @title %> </h1>
 
 <% unless @selling.empty? %><h2> Venda </h2> <% end -%>
 <%= render :partial => 'ad', :collection => @selling %>

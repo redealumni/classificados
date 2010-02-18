@@ -3,16 +3,31 @@ class AdsController < ApplicationController
   # GET /ads.xml
   def index
     
-    @title = "Classificados Recentes"
+    @title = "Últimos Classificados"
     
-    scoped_ads = Ad.created_after(30.days.ago).ordered_by_creation
+    scoped_ads = Ad.created_after(10.days.ago).ordered_by_creation
     @selling = scoped_ads.of_kind Ad::KINDS[:sell]
     @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
     @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange] 
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @ads }
+      format.xml  { render :xml => {"selling" => @selling, "buying" => @buying, "exchanging" => @exchanging} }
+    end
+  end
+  
+  def list_in_category
+    @category = Category.find(params[:category_id])
+    @title = "Classificados de #{@category.name}"
+    
+    scoped_ads = @category.ads.created_after(30.days.ago).ordered_by_creation
+    @selling = scoped_ads.of_kind Ad::KINDS[:sell]
+    @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
+    @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange]
+    
+    respond_to do |format|
+      format.html { render :action => 'index' }
+      format.xml  { render :xml => {"selling" => @selling, "buying" => @buying, "exchanging" => @exchanging} }
     end
   end
 
