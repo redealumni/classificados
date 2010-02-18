@@ -4,6 +4,10 @@
     <%= f.select :kind, Ad::KINDS.values.sort, :default => Ad::KINDS[:buy] %>
   </p>
   <p>
+    <%= f.label :category, t("activerecord.attributes.ad.category").titlecase %><br />
+    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => t("ads.please_choose_one")} %>
+  </p>
+  <p>
     <%= f.label :title, t("activerecord.attributes.ad.title").titlecase %><br />
     <%= f.text_field :title %>
   </p>

@@ -12,3 +12,6 @@ pt-BR:
         phone: telefone
         email: e-mail
         photo: foto
+        category: seção
+  ads:
+    please_choose_one: "Por favor, escolha uma"
