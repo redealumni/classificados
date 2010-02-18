@@ -3,7 +3,7 @@ class AdsController < ApplicationController
   # GET /ads.xml
   def index
     
-    @title = "Últimos Classificados"
+    @title = I18n.t("ads.latest_ads")
     
     scoped_ads = Ad.created_after(10.days.ago).ordered_by_creation
     @selling = scoped_ads.of_kind Ad::KINDS[:sell]
@@ -18,7 +18,7 @@ class AdsController < ApplicationController
   
   def list_in_category
     @category = Category.find(params[:category_id])
-    @title = "Classificados de #{@category.name}"
+    @title = I18n.t("ads.ads_from", :category_name => @category.name)
     
     scoped_ads = @category.ads.created_after(30.days.ago).ordered_by_creation
     @selling = scoped_ads.of_kind Ad::KINDS[:sell]
@@ -54,7 +54,7 @@ class AdsController < ApplicationController
 
     respond_to do |format|
       if @ad.save
-        flash[:notice] = 'Classificado criado com sucesso.'
+        flash[:notice] = I18n.t("ads.created_with_success")
         format.html { redirect_to(ads_path) }
         format.xml  { render :xml => @ad, :status => :created, :location => @ad }
       else
@@ -71,7 +71,7 @@ class AdsController < ApplicationController
 
     respond_to do |format|
       if @ad.update_attributes(params[:ad])
-        flash[:notice] = 'Classificado alterado com sucesso.'
+        flash[:notice] = I18n.t("ads.changed_with_success") 
         format.html { redirect_to(ads_path) }
         format.xml  { head :ok }
       else

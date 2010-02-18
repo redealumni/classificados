@@ -6,7 +6,7 @@ pt-BR:
       comment: Comentário
     attributes:
       ad: 
-        body: "corpo" # a tradução do atributo do model
+        body: "mensagem" # a tradução do atributo do model
         title: título
         kind: tipo
         phone: telefone
@@ -15,3 +15,9 @@ pt-BR:
         category: seção
   ads:
     please_choose_one: "Por favor, escolha uma"
+    latest_ads: "Últimos Classificados"
+    ads_from: "Classificados de {{category_name}}"
+    created_with_success: Classificado criado com sucesso
+    changed_with_success: Classificado alterado com sucesso
+    new_ad: "+ Novo Classificado"
+    categories: "Seções"
