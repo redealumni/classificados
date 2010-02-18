@@ -34,7 +34,7 @@
       
       <ul class = "category_list">
       <% for category in Category.find(:all, :order =>"name ASC") %>
-        <li><%= link_to_unless_current category.name, ads_in_category_path(category) %></li>
+        <li><%= link_to_unless_current "#{category.name} (#{category.ads.count})", ads_in_category_path(category) %></li>
       <% end %>
       </ul>
     </div>
