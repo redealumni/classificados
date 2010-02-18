@@ -1,6 +1,6 @@
 <h1>Novo Classificado</h1>
 
-<% form_for(@ad) do |f| %>
+<% form_for(@ad , :html => { :multipart => true }) do |f| %>
 
   <%= render :partial => 'form_fields', :locals =>{:f => f} %>
   <p>

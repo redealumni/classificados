@@ -12,6 +12,11 @@
     <%= f.text_area :body, :size => "40x8" %>
   </p>
   <p>
+    <%= f.label :photo, t("activerecord.attributes.ad.photo").titlecase %><br />
+    <%= f.file_field :photo %><br/>
+    <%= image_tag f.object.photo.url(:medium) %>
+  </p>
+  <p>
      <%= f.label :email, t("activerecord.attributes.ad.email").titlecase %><br />
      <%= f.text_field :email %>
    </p>
