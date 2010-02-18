@@ -16,17 +16,6 @@ class AdsController < ApplicationController
     end
   end
 
-  # GET /ads/1
-  # GET /ads/1.xml
-  def show
-    @ad = Ad.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @ad }
-    end
-  end
-
   # GET /ads/new
   # GET /ads/new.xml
   def new
