@@ -44,6 +44,6 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  map.connect ':category_id', :controller => 'ads', :action => 'list_in_category'
-  map.connect ':category_id.:format', :controller => 'ads', :action => 'list_in_category'
+  map.ads_in_category ':category_id', :controller => 'ads', :action => 'list_in_category'
+  map.formatted_ads_in_category ':category_id.:format', :controller => 'ads', :action => 'list_in_category'
 end

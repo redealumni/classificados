@@ -66,6 +66,9 @@ a:hover { color: #fff; background-color:#000; }
   font-size:70%;
   text-align:right;
 }
+.ad_category {
+  text-align:right;
+}
 
 .ad {
   background-color:aliceBlue;

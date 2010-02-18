@@ -1,20 +1,30 @@
   <div class="ad">
     <div class="ad_header yui-ge">
       <div class="ad_title yui-u first"><%=h ad.title %></div>
-      <div class="ad_date yui-u">
-        <%=h time_ago_in_words(ad.created_at) %> atrás
+      <div class="yui-u">
+        <div class = "ad_date" >
+           <%=h time_ago_in_words(ad.created_at) %> atrás
+        </div>
       </div>
     </div>
     <div class="ad_content  yui-ge">
       <div class="ad_body yui-u first">
         <%= image_tag ad.photo.url(:thumb), :class => "ad_photo"%>
-        <%=h ad.body %><br/>
-        <%= link_to 'Edit', edit_ad_path(ad) %> 
-        <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
+        <%=h ad.body %>
       </div>
       <div class="ad_info yui-u">
         <%=h ad.email %><br/>
         <%=h ad.phone %>
       </div>      
     </div>
+    <div class="ad_footer  yui-ge">
+      <div class = "ad_options  yui-u first">
+        <%= link_to 'Edit', edit_ad_path(ad) %> 
+        <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
+      </div>
+      <div class = "ad_category yui-u" >
+        <%= link_to(ad.category.name, ads_in_category_path(ad.category) )rescue nil %>
+      </div>
+    </div>
+    
   </div>
