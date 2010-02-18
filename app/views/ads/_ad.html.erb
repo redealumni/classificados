@@ -7,6 +7,7 @@
     </div>
     <div class="ad_content  yui-ge">
       <div class="ad_body yui-u first">
+        <%= image_tag ad.photo.url(:thumb), :class => "ad_photo"%>
         <%=h ad.body %><br/>
         <%= link_to 'Edit', edit_ad_path(ad) %> 
         <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
