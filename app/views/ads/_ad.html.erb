@@ -19,8 +19,10 @@
     </div>
     <div class="ad_footer  yui-ge">
       <div class = "ad_options  yui-u first">
-        <%= link_to 'Edit', edit_ad_path(ad) %> 
-        <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
+        <% if can_edit? %>
+          <%= link_to 'Edit', edit_ad_path(ad) %> 
+          <%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %>
+        <% end %>
       </div>
       <div class = "ad_category yui-u" >
         <%= link_to(ad.category.name, ads_in_category_path(ad.category) )rescue nil %>
