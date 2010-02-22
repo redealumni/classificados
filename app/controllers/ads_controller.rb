@@ -105,19 +105,6 @@ class AdsController < ApplicationController
     @categories_for_display = Category.find(:all, :order =>"name ASC").map { |c| [c, c.ads.created_after(date_to_display_ads_after[:category]).count] }
   end
   
-  #Before Filter
-  def enforce_privileges
-    unless can_edit?
-      flash[:error] = I18n.t(:access_denied)
-      redirect_to ads_path 
-    end
-  end
-  
-  def can_edit?
-    session[:admin_user]
-  end
-  helper_method :can_edit?
-  
   def date_to_display_ads_after
     {:all => 10.days.ago, :category => 30.days.ago}
   end

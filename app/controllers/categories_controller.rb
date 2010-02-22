@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
-
+  
+  before_filter :enforce_privileges
+  
   # GET /categories
   # GET /categories.xml
   def index
