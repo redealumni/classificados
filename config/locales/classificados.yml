@@ -16,13 +16,15 @@ pt-BR:
         category_id: Seção
   ads:
     please_choose_one: "Por favor, escolha uma"
-    latest_ads: "Últimos Classificados"
-    ads_from: "Classificados de {{category_name}}"
-    created_with_success: Classificado criado com sucesso
-    changed_with_success: Classificado alterado com sucesso
-    new_ad: "+ Novo Classificado"
+    latest_ads: "Anúncios Recentes"
+    ads_from: "Anúncios de {{category_name}}"
+    created_with_success: Anúncio criado com sucesso
+    changed_with_success: Anúncio alterado com sucesso
+    new_ad: "+ Novo Anúncio"
     categories: "Seções"
     remove: "Remover Anúncio"
+    update: "Atualizar Anúncio"
+    new: "Novo Anúncio"
   logged_in_as_admin: "Logado como administrador!"
   logged_off_as_admin: "Permissão de administrador removida!"
   access_denied: "Acesso Negado."

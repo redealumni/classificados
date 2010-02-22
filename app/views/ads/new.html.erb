@@ -1,4 +1,6 @@
-<h1>Novo Classificado</h1>
+<% @title = "#{t("ads.new")} "%>
+
+<h1><%= t("ads.new")%></h1>
 
 <% form_for(@ad , :html => { :multipart => true }) do |f| %>
 
