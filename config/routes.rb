@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :categories
 
   map.resources :ads
+  map.email_edit_ad "edit_ad/:id/:secret_code", :controller => "ads", :action => "edit"
 
   map.admin "admin", :controller => "admin", :action => "signin"
   map.admin "reset", :controller => "admin", :action => "signoff"

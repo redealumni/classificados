@@ -19,4 +19,5 @@ class ApplicationController < ActionController::Base
     session[:admin_user]
   end
   helper_method :can_edit?
+  
 end

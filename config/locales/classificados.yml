@@ -22,6 +22,8 @@ pt-BR:
     changed_with_success: Classificado alterado com sucesso
     new_ad: "+ Novo Classificado"
     categories: "Seções"
+    remove: "Remover Anúncio"
   logged_in_as_admin: "Logado como administrador!"
   logged_off_as_admin: "Permissão de administrador removida!"
   access_denied: "Acesso Negado."
+  are_you_sure: "Você tem certeza disto?"

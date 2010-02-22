@@ -100,6 +100,12 @@ class AdsController < ApplicationController
   
   private
   
+  def can_edit?
+    super || Ad.find(params[:id]).secret_code == params[:secret_code]
+  rescue
+    false
+  end
+  
   # Before Filter
   def get_categories_for_display
     @categories_for_display = Category.find(:all, :order =>"name ASC").map { |c| [c, c.ads.created_after(date_to_display_ads_after[:category]).count] }

@@ -8,7 +8,6 @@ class Mailer < ActionMailer::Base
     sent_on    Time.now
     
     @ad = ad
-    @created_at = Time.now
     
   end
 

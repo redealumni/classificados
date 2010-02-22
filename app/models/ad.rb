@@ -1,9 +1,12 @@
 require 'digest/sha1'
 class Ad < ActiveRecord::Base
-  
-  before_create :generate_secret_code, :send_confirmation_email
-  
+
   KINDS = {:buy => "compra", :sell => "venda", :exchange => "troca"}
+  
+  attr_protected :secret_code
+  
+  before_create :generate_secret_code
+  after_create :send_confirmation_email
   
   named_scope :ordered_by_creation, :order => "created_at DESC"
   named_scope :created_after, lambda{ |time| {:conditions => ["created_at > ?", time ]} }

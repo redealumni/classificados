@@ -1,13 +1,15 @@
 <h1>Alterar Classificado</h1>
 
+<%= link_to t("ads.remove"), ad_path(@ad, :secret_code => @ad.secret_code), :confirm => t("are_you_sure"), :method => :delete %>
+
 <% form_for(@ad , :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
   <%= render :partial => 'form_fields', :locals =>{:f => f} %>
   
+  <%= hidden_field_tag :secret_code, @ad.secret_code %>
+  
   <p>
     <%= f.submit 'Atualizar' %>
   </p>
 <% end %>
-
-<%= link_to 'Voltar', ads_path %>
