@@ -59,7 +59,7 @@ class AdsController < ApplicationController
     respond_to do |format|
       if @ad.save
         flash[:notice] = I18n.t("ads.created_with_success")
-        format.html { redirect_to(ads_path) }
+        format.html { redirect_to(ads_path(:anchor =>@ad.id)) }
         format.xml  { render :xml => @ad, :status => :created, :location => @ad }
       else
         format.html { render :action => "new" }
@@ -76,7 +76,7 @@ class AdsController < ApplicationController
     respond_to do |format|
       if @ad.update_attributes(params[:ad])
         flash[:notice] = I18n.t("ads.changed_with_success") 
-        format.html { redirect_to(ads_path) }
+        format.html { redirect_to(ads_in_category_path(@ad.category, :anchor =>@ad.id)) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
