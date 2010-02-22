@@ -1,3 +1,9 @@
-Mailer#ad_creation
+Parabéns, você criou um novo anúncio com o título <%= @ad.title%>, na seção <%= @ad.category.name%>. 
 
-Find me in app/views/mailer/ad_creation.erb
+Ele pode ser visto em <%= ads_in_category_url @ad.category %> por 30 dias a partir de <%= I18n.l @created_at, :format => :short %>.
+
+Para editá-lo, use o link: 
+XXX
+
+Para remové-lo, use o link:
+YYY
