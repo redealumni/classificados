@@ -68,3 +68,11 @@ Category.create(:name => "Diversos").ads = Ad.create([
     :kind => "troca"
   }
 ])
+
+# Altera data dos anúncios para ficarem mais aleatórias
+Ad.all.each_with_index do |ad, index|
+  ad.update_attribute(:created_at, (index+1).days.ago + rand(24).hours )
+end
+
+# Só para mostrar que pode existir um problema na contagem dos classificados de uma categoria
+Ad.first.update_attribute(:created_at, 34.days.ago )

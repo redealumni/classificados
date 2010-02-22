@@ -1,11 +1,14 @@
 class AdsController < ApplicationController
+  
+  before_filter :get_categories_for_display
+    
   # GET /ads
   # GET /ads.xml
   def index
     
     @title = I18n.t("ads.latest_ads")
     
-    scoped_ads = Ad.created_after(10.days.ago).ordered_by_creation
+    scoped_ads = Ad.created_after(date_to_display_ads_after[:all]).ordered_by_creation
     @selling = scoped_ads.of_kind Ad::KINDS[:sell]
     @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
     @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange] 
@@ -17,10 +20,10 @@ class AdsController < ApplicationController
   end
   
   def list_in_category
-    @category = Category.find(params[:category_id])
+    @category = Category.find_by_permalink(params[:category_id])
     @title = I18n.t("ads.ads_from", :category_name => @category.name)
     
-    scoped_ads = @category.ads.created_after(30.days.ago).ordered_by_creation
+    scoped_ads = @category.ads.created_after(date_to_display_ads_after[:category]).ordered_by_creation
     @selling = scoped_ads.of_kind Ad::KINDS[:sell]
     @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
     @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange]
@@ -92,4 +95,16 @@ class AdsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  
+  private
+  
+  def get_categories_for_display
+    @categories_for_display = Category.find(:all, :order =>"name ASC").map { |c| [c, c.ads.created_after(date_to_display_ads_after[:category]).count] }
+  end
+  
+  def date_to_display_ads_after
+    {:all => 10.days.ago, :category => 30.days.ago}
+  end
+
 end
