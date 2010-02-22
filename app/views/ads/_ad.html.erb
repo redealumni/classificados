@@ -21,7 +21,7 @@
       <div class = "ad_options  yui-u first">
         <% if can_edit? %>
           <%= link_to t(:edit), edit_ad_path(ad) %> 
-          <%= link_to t(:remove), ad, :confirm => 'Are you sure?', :method => :delete %>
+          <%= link_to t(:remove), ad, :confirm => t(:are_you_sure), :method => :delete %>
         <% end %>
       </div>
       <div class = "ad_category yui-u" >
