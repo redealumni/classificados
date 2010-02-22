@@ -9,4 +9,9 @@ class Ad < ActiveRecord::Base
   
   belongs_to :category
   
+  validates_presence_of :title, :body, :kind, :category_id
+  validates_length_of :title, :within => 5..50
+  validates_length_of :body, :within => 20..500
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/
+  
 end

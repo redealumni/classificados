@@ -6,13 +6,14 @@ pt-BR:
       comment: Comentário
     attributes:
       ad: 
-        body: "mensagem" # a tradução do atributo do model
-        title: título
-        kind: tipo
-        phone: telefone
-        email: e-mail
-        photo: foto
-        category: seção
+        body: "Mensagem" # a tradução do atributo do model
+        title: Título
+        kind: Tipo
+        phone: Telefone
+        email: E-mail
+        photo: Foto
+        category: Seção
+        category_id: Seção
   ads:
     please_choose_one: "Por favor, escolha uma"
     latest_ads: "Últimos Classificados"
