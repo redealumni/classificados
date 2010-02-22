@@ -1,6 +1,7 @@
 class AdsController < ApplicationController
   
   before_filter :get_categories_for_display
+  before_filter :enforce_privileges, :only => [:edit, :update, :destroy]
     
   # GET /ads
   # GET /ads.xml
@@ -99,9 +100,19 @@ class AdsController < ApplicationController
   
   private
   
+  # Before Filter
   def get_categories_for_display
     @categories_for_display = Category.find(:all, :order =>"name ASC").map { |c| [c, c.ads.created_after(date_to_display_ads_after[:category]).count] }
   end
+  
+  #Before Filter
+  def enforce_privileges
+    unless session[:admin_user]
+      flash[:error] = I18n.t(:access_denied)
+      redirect_to ads_path 
+    end
+  end
+  
   
   def date_to_display_ads_after
     {:all => 10.days.ago, :category => 30.days.ago}

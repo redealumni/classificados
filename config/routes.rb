@@ -3,6 +3,11 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :ads
 
+  map.admin "admin", :controller => "admin", :action => "signin"
+  map.admin "reset", :controller => "admin", :action => "signoff"
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
