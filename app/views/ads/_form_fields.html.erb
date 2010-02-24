@@ -1,5 +1,8 @@
   <%= f.error_messages %>
-  <p>
+
+<div class= "yui-g">
+  <div class= "yui-u first">
+	<p>
     <%= f.label :kind, t("activerecord.attributes.ad.kind").titlecase %><br />
     <%= f.select :kind, Ad::KINDS.values.sort, :default => Ad::KINDS[:buy] %>
   </p>
@@ -16,11 +19,6 @@
     <%= f.text_area :body, :size => "40x8" %>
   </p>
   <p>
-    <%= f.label :photo, t("activerecord.attributes.ad.photo").titlecase %><br />
-    <%= f.file_field :photo %><br/>
-    <%= image_tag f.object.photo.url(:medium) %>
-  </p>
-  <p>
      <%= f.label :email, t("activerecord.attributes.ad.email").titlecase %><br />
      <%= f.text_field :email %>
    </p>
@@ -28,3 +26,12 @@
      <%= f.label :phone, t("activerecord.attributes.ad.phone").titlecase %><br />
      <%= f.text_field :phone %>
    </p>
+  </div>
+  <div class = "yui-u">
+  <p>
+    <%= f.label :photo, t("activerecord.attributes.ad.photo").titlecase %><br />
+    <%= f.file_field :photo %><br/>
+    <%= image_tag f.object.photo.url(:medium) %>
+  </p>
+	</div>
+</div>

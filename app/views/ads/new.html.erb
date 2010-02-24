@@ -5,9 +5,8 @@
 <% form_for(@ad , :html => { :multipart => true }) do |f| %>
 
   <%= render :partial => 'form_fields', :locals =>{:f => f} %>
+  <br/>
   <p>
     <%= f.submit 'Criar' %>
   </p>
 <% end %>
-
-<%= link_to 'Voltar', ads_path %>

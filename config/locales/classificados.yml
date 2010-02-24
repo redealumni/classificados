@@ -22,7 +22,7 @@ pt-BR:
     changed_with_success: Anúncio alterado com sucesso
     new_ad: "+ Novo Anúncio"
     categories: "Seções"
-    remove: "Remover Anúncio"
+    remove: "Remover Anúncio [X]"
     update: "Atualizar Anúncio"
     new: "Novo Anúncio"
   logged_in_as_admin: "Logado como administrador!"
