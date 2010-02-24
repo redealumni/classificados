@@ -116,3 +116,11 @@ font-size:130%;
 font-weight:bold;
 margin:0.5em 0;
 }
+
+#search_box {
+  text-align: right;
+}
+
+#nav {
+  float: right;
+}

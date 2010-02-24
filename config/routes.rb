@@ -5,8 +5,8 @@ ActionController::Routing::Routes.draw do |map|
   map.email_edit_ad "edit_ad/:id/:secret_code", :controller => "ads", :action => "edit"
 
   map.admin "admin", :controller => "admin", :action => "signin"
-  map.admin "reset", :controller => "admin", :action => "signoff"
-
+  map.reset "reset", :controller => "admin", :action => "signoff"
+  map.search "search", :controller => "ads", :action => "search"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

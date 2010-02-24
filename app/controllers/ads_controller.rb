@@ -9,10 +9,7 @@ class AdsController < ApplicationController
     
     @title = I18n.t("ads.latest_ads")
     
-    scoped_ads = Ad.created_after(date_to_display_ads_after[:all]).ordered_by_creation
-    @selling = scoped_ads.of_kind Ad::KINDS[:sell]
-    @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
-    @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange] 
+    ads_by_types(Ad.created_after(date_limit_for_ads_from(:latest)))
 
     respond_to do |format|
       format.html # index.html.erb
@@ -24,10 +21,18 @@ class AdsController < ApplicationController
     @category = Category.find_by_permalink(params[:category_id])
     @title = I18n.t("ads.ads_from", :category_name => @category.name)
     
-    scoped_ads = @category.ads.created_after(date_to_display_ads_after[:category]).ordered_by_creation
-    @selling = scoped_ads.of_kind Ad::KINDS[:sell]
-    @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
-    @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange]
+    ads_by_types(@category.ads.created_after(date_limit_for_ads_from(:category)))
+    
+    respond_to do |format|
+      format.html { render :action => 'index' }
+      format.xml  { render :xml => {"selling" => @selling, "buying" => @buying, "exchanging" => @exchanging} }
+    end
+  end
+  
+  def search
+    @title = I18n.t("ads.search_for", :query => params[:query])
+    
+    ads_by_types( Ad.created_after(date_limit_for_ads_from(:search)).search(params[:query]) )
     
     respond_to do |format|
       format.html { render :action => 'index' }
@@ -100,19 +105,28 @@ class AdsController < ApplicationController
   
   private
   
+  # Before Filter
+  def get_categories_for_display
+    @categories_for_display = Category.find(:all, :order =>"name ASC").map do |c| 
+      [c, c.ads.created_after(date_limit_for_ads_from(:category)).count]
+    end
+  end
+
   def can_edit?
     super || Ad.find(params[:id]).secret_code == params[:secret_code]
   rescue
     false
   end
   
-  # Before Filter
-  def get_categories_for_display
-    @categories_for_display = Category.find(:all, :order =>"name ASC").map { |c| [c, c.ads.created_after(date_to_display_ads_after[:category]).count] }
+  def date_limit_for_ads_from(type)
+    {:latest => 10.days.ago, :category => 30.days.ago, :search => 30.days.ago}[type]
   end
-  
-  def date_to_display_ads_after
-    {:all => 10.days.ago, :category => 30.days.ago}
+
+  def ads_by_types(scoped_ads)
+    scoped_ads = scoped_ads.ordered_by_creation
+    @selling = scoped_ads.of_kind Ad::KINDS[:sell]
+    @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
+    @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange]
   end
 
 end

@@ -11,6 +11,7 @@ class Ad < ActiveRecord::Base
   named_scope :ordered_by_creation, :order => "created_at DESC"
   named_scope :created_after, lambda{ |time| {:conditions => ["created_at > ?", time ]} }
   named_scope :of_kind, lambda{ |kind| {:conditions => ["kind = ?", kind ]} }
+  named_scope :search, lambda{ |query|  {:conditions => ["title LIKE :q OR body LIKE :q", {:q => "%#{query.downcase}%"}] } }
   
   has_attached_file :photo, :styles => { :medium => "200x200>", :thumb => "100x100>" }
   

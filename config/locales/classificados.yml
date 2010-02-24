@@ -18,6 +18,7 @@ pt-BR:
     please_choose_one: "Por favor, escolha uma"
     latest_ads: "Anúncios Recentes"
     ads_from: "Anúncios de {{category_name}}"
+    search_for: "Resultados da busca por '{{query}}'"
     created_with_success: Anúncio criado com sucesso
     changed_with_success: Anúncio alterado com sucesso
     new_ad: "+ Novo Anúncio"
@@ -31,3 +32,6 @@ pt-BR:
   are_you_sure: "Você tem certeza disto?"
   edit: Editar
   remove: Remover
+  search: Busca
+  logoff: Deslogar
+  admin: Administrador

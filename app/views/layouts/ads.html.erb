@@ -11,7 +11,10 @@
 <body>
 <div id="doc2" class="yui-t1">
   
-  <div id="hd"> <h1>Classificados Online</h1>  </div>
+  <div id="hd"> 
+    <div id="nav"><%=link_to(t(:logoff), reset_path) if session[:admin_user]%></div>
+    <h1>Classificados Online</h1>  
+  </div>
   
   <div id="bd">
     <div id="yui-main">
@@ -19,6 +22,13 @@
         
         <p style="color: green"><%= flash[:notice] %></p>
         <p style="color: red"><%= flash[:error] %></p>
+        
+        <div id="search_box">
+          <% form_tag search_path, :method => :get do %>
+            <%= text_field_tag("query", params[:query])%>
+            <%= submit_tag(t("search"))%>
+          <% end %>
+        </div>
         <%= yield %>
         
       </div>
