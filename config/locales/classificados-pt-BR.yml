@@ -2,8 +2,6 @@ pt-BR:
   activerecord:
     models:
       ad: "Classificado" # o model do active record
-      user: 
-      comment: Comentário
     attributes:
       ad: 
         body: "Mensagem" # a tradução do atributo do model
@@ -16,7 +14,7 @@ pt-BR:
         category_id: Seção
   ads:
     please_choose_one: "Por favor, escolha uma"
-    latest_ads: "Anúncios Recentes"
+    latest_ads: "Últimos"
     ads_from: "Anúncios de {{category_name}}"
     search_for: "Resultados da busca por '{{query}}'"
     created_with_success: Anúncio criado com sucesso
@@ -38,8 +36,9 @@ pt-BR:
   sell: venda
   buy: compra
   exchange: troca
+  ago: atrás
   number_of_ads_by_type: 
-    zero:
+    zero: 
     one: "1 anúncio para {{type}}"
     other: "{{count}} anúncios para {{type}}"
     

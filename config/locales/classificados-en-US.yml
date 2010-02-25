@@ -1,0 +1,44 @@
+en:
+  activerecord:
+    models:
+      ad: "Ad" # o model do active record
+    attributes:
+      ad: 
+        body: "Message" # a tradução do atributo do model
+        title: Title
+        kind: Kind
+        phone: Telefone
+        email: E-mail
+        photo: Photo
+        category: Category
+        category_id: Category
+  ads:
+    please_choose_one: "Please, pick one"
+    latest_ads: "Latest Ads"
+    ads_from: "Ads from {{category_name}}"
+    search_for: "Results for '{{query}}'"
+    created_with_success: Ad created with success
+    changed_with_success: Ad updated with success
+    new_ad: "+ New Ad"
+    categories: Categories
+    remove: "Remove Ad [X]"
+    update: Update Ad
+    new: New Ad
+  logged_in_as_admin: Logged in as administrator!
+  logged_off_as_admin: Not admin anymore. Close your browser.
+  access_denied: Access Denied
+  are_you_sure: "Are you sure?"
+  edit: Edit
+  remove: Remove
+  search: Search
+  logoff: Logoff
+  admin: Administrator
+  sell: sell
+  buy: buy
+  exchange: exchange
+  ago: ago
+  number_of_ads_by_type: 
+    zero:
+    one: "1 ad for {{type}}"
+    other: "{{count}} ads for {{type}}"
+    

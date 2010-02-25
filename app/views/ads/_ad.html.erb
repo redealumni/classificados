@@ -3,7 +3,7 @@
       <div class="ad_title yui-u first"><a name="<%=ad.id%>"><%=h ad.title %></a></div>
       <div class="yui-u">
         <div class = "ad_date" >
-           <%=h time_ago_in_words(ad.created_at) %> atrás
+           <%=h time_ago_in_words(ad.created_at) %> <%=t :ago %>
         </div>
       </div>
     </div>
