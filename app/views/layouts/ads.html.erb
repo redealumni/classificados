@@ -45,12 +45,17 @@
       
       <ul class = "main_links">
         <li><%= link_to_unless_current t("ads.new_ad"), new_ad_path %></li>
-        <li><%= link_to_unless_current t("ads.latest_ads"), ads_path %></li>
       </ul>
       
       <h2><%=t("ads.categories")%></h2>
       
       <ul class = "category_list">
+        <li class = "<%= "current" if current_page?(root_path)%>" >
+          <% link_to root_path do %>
+            <%= image_tag "clock-icon.png"%>
+            <span> <%= t "ads.latest_ads" %></span>
+          <%end%>
+        </li>
       <% for category, count in @categories_for_display %>
         <li class = "<%= "current" if current_page?(ads_in_category_path(category))%>">
           <% link_to ads_in_category_path(category) do %>
