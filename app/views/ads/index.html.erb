@@ -1,13 +1,22 @@
 <h1> <%= @title %> </h1>
 
-<% unless @selling.empty? %><h2> Venda </h2> <% end -%>
+<% unless @selling.empty? %><h2> <%= t :sell %> </h2> <% end -%>
 <%= render :partial => 'ad', :collection => @selling %>
 
-<% unless @buying.empty? %><h2> Compra </h2><% end -%>
+<% unless @buying.empty? %><h2> <%= t :buy %> </h2><% end -%>
 <%= render :partial => 'ad', :collection => @buying %>
 
-<% unless @exchanging.empty? %><h2> Troca </h2><% end -%>
+<% unless @exchanging.empty? %><h2> <%= t :exchange %> </h2><% end -%>
 <%= render :partial => 'ad', :collection => @exchanging %>
 
 <br />
 
+<% content_for :results_summary do %>
+  <%=
+  [ 
+    t(:number_of_ads_by_type, :count => @selling.size , :type => t(:sell)) ,
+    t(:number_of_ads_by_type, :count => @buying.size , :type => t(:buy)) ,
+    t(:number_of_ads_by_type, :count => @exchanging.size , :type => t(:exchange))
+  ].compact.to_sentence
+  %>
+<%end%>

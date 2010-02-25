@@ -14,7 +14,8 @@
       </div>
       <div class="ad_info yui-u">
         <%=h ad.email %><br/>
-        <%=h ad.phone %>
+        <%=h ad.phone %><br/>
+        <%= image_tag ad.category.photo.url(:tiny), :class => "category_photo"%>
       </div>      
     </div>
     <div class="ad_footer  yui-ge">
@@ -25,7 +26,7 @@
         <% end %>
       </div>
       <div class = "ad_category yui-u" >
-        <%= link_to(ad.category.name, ads_in_category_path(ad.category) )rescue nil %>
+        <%= link_to(ad.category.name, ads_in_category_path(ad.category) ) %>   
       </div>
     </div>
     

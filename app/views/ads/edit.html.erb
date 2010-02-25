@@ -1,9 +1,8 @@
 <% @title = "#{t("ads.update")} - #{@ad.title}"%>
 
-<%= link_to t("ads.remove"), ad_path(@ad, :secret_code => @ad.secret_code), :confirm => t("are_you_sure"), :method => :delete, :style => "float:right;" %>
-
 <h1><%= t("ads.update")%></h1>
 
+<%= link_to t("ads.remove"), ad_path(@ad, :secret_code => @ad.secret_code), :confirm => t("are_you_sure"), :method => :delete, :style => "float:right;" %>
 
 <% form_for(@ad , :html => { :multipart => true }) do |f| %>
 

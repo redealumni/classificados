@@ -124,3 +124,57 @@ margin:0.5em 0;
 #nav {
   float: right;
 }
+
+.category_photo {
+  background-color:white;
+  border:0.1em solid lightBlue;
+  float:right;
+  margin:0.5em 0;
+  padding:0.3em;
+}
+
+.category_list li {
+  background-color:white;
+  border-left:0.3em dotted lightBlue;
+  margin:1.5em 0;
+  padding:0.3em;
+  padding-left: 1em;
+  padding-top: 1em;
+}
+
+.category_list li:hover {
+  border-color: yellow;
+}
+
+.category_list img {
+  margin: 0;
+  margin-right: 0.5em;
+}
+
+.category_list span {
+  vertical-align: top;
+  font-size:80%;
+}
+
+.category_list a {
+  color: navy;
+  text-decoration:none;
+  background: none;
+}
+
+.category_list a:hover {
+  color: blue;
+}
+
+.category_list li.current {
+  border-left:0.5em dotted darkBlue;
+}
+
+.category_list li.current span {
+  font-weight: bold;
+}
+
+#results_summary {
+  font-size: 80%;
+  color: grey;
+}

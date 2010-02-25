@@ -35,3 +35,11 @@ pt-BR:
   search: Busca
   logoff: Deslogar
   admin: Administrador
+  sell: venda
+  buy: compra
+  exchange: troca
+  number_of_ads_by_type: 
+    zero:
+    one: "1 anúncio para {{type}}"
+    other: "{{count}} anúncios para {{type}}"
+    

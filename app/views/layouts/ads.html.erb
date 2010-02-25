@@ -9,7 +9,7 @@
   <%= stylesheet_link_tag 'main' %>
 </head>
 <body>
-<div id="doc2" class="yui-t1">
+<div id="doc2" class="yui-t2">
   
   <div id="hd"> 
     <div id="nav"><%=link_to(t(:logoff), reset_path) if session[:admin_user]%></div>
@@ -22,13 +22,20 @@
         
         <p style="color: green"><%= flash[:notice] %></p>
         <p style="color: red"><%= flash[:error] %></p>
+
+        <div class = "yui-g">
+          <div id = "results_summary" class="yui-u first">
+            <%= yield :results_summary %>
+          </div>
         
-        <div id="search_box">
-          <% form_tag search_path, :method => :get do %>
-            <%= text_field_tag("query", params[:query])%>
-            <%= submit_tag(t("search"))%>
-          <% end %>
+          <div id="search_box" class = "yui-u">
+            <% form_tag search_path, :method => :get do %>
+              <%= text_field_tag("query", params[:query], :autocomplete => "off" )%>
+              <%= submit_tag(t("search"))%>
+            <% end %>
+          </div>
         </div>
+
         <%= yield %>
         
       </div>
@@ -45,7 +52,12 @@
       
       <ul class = "category_list">
       <% for category, count in @categories_for_display %>
-        <li><%= link_to_unless_current "#{category.name} (#{count})", ads_in_category_path(category) %></li>
+        <li class = "<%= "current" if current_page?(ads_in_category_path(category))%>">
+          <% link_to ads_in_category_path(category) do %>
+            <%= image_tag category.photo.url(:tiny) %>
+            <span><%= category.name + " (#{count})"%> </span>
+          <% end %>
+        </li>
       <% end %>
       </ul>
     </div>

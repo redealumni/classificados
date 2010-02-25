@@ -2,6 +2,10 @@
   <b>Name:</b>
   <%=h @category.name %>
 </p>
+<p>
+  <b>Photo:</b>
+  <br/><%= image_tag @category.photo.url(:thumb) %>
+</p>
 
 
 

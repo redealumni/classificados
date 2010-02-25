@@ -3,12 +3,15 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Ads count</th>
+    <th>Entries</th>
+    <th>Photo</th>
   </tr>
 
 <% @categories.each do |category| %>
   <tr>
     <td><%=h category.name %></td>
+    <td><%= category.ads.count %></td>
+    <td><%= image_tag  category.photo.url(:tiny) %></td>
     <td><%= link_to 'Show', category %></td>
     <td><%= link_to 'Edit', edit_category_path(category) %></td>
     <td><%= link_to 'Destroy', category, :confirm => 'Are you sure?', :method => :delete %></td>
