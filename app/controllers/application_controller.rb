@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   def enforce_privileges
     unless can_edit?
       flash[:error] = I18n.t(:access_denied)
-      redirect_to ads_path 
+      redirect_to root_path 
     end
   end
   

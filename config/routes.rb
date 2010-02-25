@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  
+  map.root :controller => "ads"
+  
+  
   map.resources :categories
 
   map.resources :ads

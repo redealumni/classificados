@@ -64,7 +64,7 @@ class AdsController < ApplicationController
     respond_to do |format|
       if @ad.save
         flash[:notice] = I18n.t("ads.created_with_success")
-        format.html { redirect_to(ads_path(:anchor =>@ad.id)) }
+        format.html { redirect_to(root_path(:anchor =>@ad.id)) }
         format.xml  { render :xml => @ad, :status => :created, :location => @ad }
       else
         format.html { render :action => "new" }
@@ -97,7 +97,7 @@ class AdsController < ApplicationController
     @ad.destroy
 
     respond_to do |format|
-      format.html { redirect_to(ads_url) }
+      format.html { redirect_to(root_path) }
       format.xml  { head :ok }
     end
   end

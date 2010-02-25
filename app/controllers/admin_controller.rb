@@ -5,12 +5,12 @@ class AdminController < ApplicationController
   
   def signin
     session[:admin_user] = true
-    redirect_to ads_path
+    redirect_to root_path
   end
   
   def signoff
     session[:admin_user] = nil
-    redirect_to ads_path
+    redirect_to root_path
   end
   
   def authenticate
