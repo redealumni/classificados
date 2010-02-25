@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  ads_count: 1
 
 two:
   name: MyString
-  ads_count: 1

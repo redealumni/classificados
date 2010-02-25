@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  title: MyString
-  body: MyText
-  email: MyString
-  phone: MyString
+search_one:
+  title: Ofereço empregos
+  body: Este anúncio fala de rails e de notebook
+  email: joao@joao.com
+  phone: 21 23232332
 
-two:
-  title: MyString
-  body: MyText
-  email: MyString
-  phone: MyString
+search_two:
+  title: Ofereço cursos
+  body: Este anúncio fala de java e de NOTEBOOK
+  email: jose@jose.com
+  phone: 12 31232131
