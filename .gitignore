@@ -5,3 +5,4 @@ log/test.log
 db/development.sqlite3
 db/schema.rb
 public/system/*
+db/test.sqlite3
