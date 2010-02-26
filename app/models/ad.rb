@@ -28,7 +28,7 @@ class Ad < ActiveRecord::Base
   validates_inclusion_of :kind, :in => KINDS
     
   def secret_code
-    Digest::SHA1.hexdigest("#{SECRET}---|||----#{self.id}---|||----#{self.created_at_before_type_cast}")
+    Digest::SHA1.hexdigest("#{SECRET}---|||----#{self.id}---|||----#{self.created_at(:utc).to_s}")
   end
   
   protected
