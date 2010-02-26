@@ -1,4 +1,4 @@
-<%= t "email.congratulations", :title => @ad.title, :type => t(@ad.type), :category => @ad.category.name %>
+<%= t "email.congratulations", :title => @ad.title, :type => t(@ad.kind), :category => @ad.category.name %>
 
 <%= t "email.where_is_it", 
   :category_link => ads_in_category_url(@ad.category, :anchor => @ad.id), 
