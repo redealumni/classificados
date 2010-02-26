@@ -17,7 +17,7 @@ class Ad < ActiveRecord::Base
     {:conditions => [final_sql, sql_params].flatten }
   }
   
-  has_attached_file :photo, :styles => { :medium => "200x200>", :thumb => "100x100>" }
+  has_attached_file :photo, :styles => { :medium => "400x400>", :thumb => "100x100>" }
   
   belongs_to :category
   
