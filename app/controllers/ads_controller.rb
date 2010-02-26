@@ -33,7 +33,7 @@ class AdsController < ApplicationController
     if params[:query].size >=3
       ads_by_types( Ad.created_after(date_limit_for_ads_from(:search)).search(params[:query]) )
     else
-      render :nothing
+      render :nothing => true
     end
   end
 
