@@ -5,13 +5,12 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :categories
 
-  map.resources :ads
+  map.resources :ads, :collection => "ajax_results_summary"
   map.email_edit_ad "edit_ad/:id/:secret_code", :controller => "ads", :action => "edit"
 
   map.admin "admin", :controller => "admin", :action => "signin"
   map.reset "reset", :controller => "admin", :action => "signoff"
   map.search "search", :controller => "ads", :action => "search"
-
 
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -52,6 +51,7 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  map.connect ':controller/:action'
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
   map.ads_in_category ':category_id', :controller => 'ads', :action => 'list_in_category'

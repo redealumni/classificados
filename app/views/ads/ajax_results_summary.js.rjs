@@ -1,0 +1,1 @@
+page[:results_summary].replace_html "<strong>#{params[:query]}</strong>: <em>#{ads_summary_as_sentence}</em> - #{t(:enter_to_search)}"

@@ -41,4 +41,5 @@ en:
     zero:
     one: "1 ad for {{type}}"
     other: "{{count}} ads for {{type}}"
+  enter_to_search: Hit 'Enter' to Search
     

@@ -5,22 +5,18 @@ class AdsController < ApplicationController
     
   # GET /ads
   def index
-    
     @title = I18n.t("ads.latest_ads")
     
     ads_by_types(Ad.created_after(date_limit_for_ads_from(:latest)))
-
   end
   
   # GET /:category_name
   def list_in_category
-    @category = Category.find_by_permalink(params[:category_id])
+    @category = Category.find_by_permalink(params[:category_id])  
     @title = I18n.t("ads.ads_from", :category_name => @category.name)
-    
+
     ads_by_types(@category.ads.created_after(date_limit_for_ads_from(:category)))
-    
-    render :action => 'index' 
-    
+    render :action => 'index'   
   end
   
   # GET /search
@@ -28,8 +24,17 @@ class AdsController < ApplicationController
     @title = I18n.t("ads.search_for", :query => params[:query])
     
     ads_by_types( Ad.created_after(date_limit_for_ads_from(:search)).search(params[:query]) )
-    
     render :action => 'index' 
+  end
+  
+  # GET /ajax_
+  
+  def ajax_results_summary
+    if params[:query].size >=3
+      ads_by_types( Ad.created_after(date_limit_for_ads_from(:search)).search(params[:query]) )
+    else
+      render :nothing
+    end
   end
 
   # GET /ads/new

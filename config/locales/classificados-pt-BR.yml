@@ -41,4 +41,4 @@ pt-BR:
     zero: 
     one: "1 anúncio para {{type}}"
     other: "{{count}} anúncios para {{type}}"
-    
+  enter_to_search: Pressione 'Enter' para buscar
