@@ -4,51 +4,37 @@ class AdsController < ApplicationController
   before_filter :enforce_privileges, :only => [:edit, :update, :destroy]
     
   # GET /ads
-  # GET /ads.xml
   def index
     
     @title = I18n.t("ads.latest_ads")
     
     ads_by_types(Ad.created_after(date_limit_for_ads_from(:latest)))
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => {"selling" => @selling, "buying" => @buying, "exchanging" => @exchanging} }
-    end
   end
   
+  # GET /:category_name
   def list_in_category
     @category = Category.find_by_permalink(params[:category_id])
     @title = I18n.t("ads.ads_from", :category_name => @category.name)
     
     ads_by_types(@category.ads.created_after(date_limit_for_ads_from(:category)))
     
-    respond_to do |format|
-      format.html { render :action => 'index' }
-      format.xml  { render :xml => {"selling" => @selling, "buying" => @buying, "exchanging" => @exchanging} }
-    end
+    render :action => 'index' 
+    
   end
   
+  # GET /search
   def search
     @title = I18n.t("ads.search_for", :query => params[:query])
     
     ads_by_types( Ad.created_after(date_limit_for_ads_from(:search)).search(params[:query]) )
     
-    respond_to do |format|
-      format.html { render :action => 'index' }
-      format.xml  { render :xml => {"selling" => @selling, "buying" => @buying, "exchanging" => @exchanging} }
-    end
+    render :action => 'index' 
   end
 
   # GET /ads/new
-  # GET /ads/new.xml
   def new
     @ad = Ad.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @ad }
-    end
   end
 
   # GET /ads/1/edit
@@ -57,49 +43,37 @@ class AdsController < ApplicationController
   end
 
   # POST /ads
-  # POST /ads.xml
   def create
+    
     @ad = Ad.new(params[:ad])
 
-    respond_to do |format|
-      if @ad.save
-        flash[:notice] = I18n.t("ads.created_with_success")
-        format.html { redirect_to(root_path(:anchor =>@ad.id)) }
-        format.xml  { render :xml => @ad, :status => :created, :location => @ad }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @ad.errors, :status => :unprocessable_entity }
-      end
+    if @ad.save
+      flash[:notice] = I18n.t("ads.created_with_success")
+      redirect_to(root_path(:anchor =>@ad.id))
+    else
+      render :action => "new" 
     end
+
   end
 
   # PUT /ads/1
-  # PUT /ads/1.xml
   def update
     @ad = Ad.find(params[:id])
 
-    respond_to do |format|
-      if @ad.update_attributes(params[:ad])
-        flash[:notice] = I18n.t("ads.changed_with_success") 
-        format.html { redirect_to(ads_in_category_path(@ad.category, :anchor =>@ad.id)) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @ad.errors, :status => :unprocessable_entity }
-      end
+    if @ad.update_attributes(params[:ad])
+      flash[:notice] = I18n.t("ads.changed_with_success") 
+      redirect_to(ads_in_category_path(@ad.category, :anchor =>@ad.id))
+    else
+      render :action => "edit"
     end
   end
 
   # DELETE /ads/1
-  # DELETE /ads/1.xml
   def destroy
     @ad = Ad.find(params[:id])
     @ad.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(root_path) }
-      format.xml  { head :ok }
-    end
+    redirect_to(root_path)    
   end
   
   
