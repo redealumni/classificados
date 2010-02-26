@@ -16,7 +16,7 @@ en:
     please_choose_one: "Please, pick one"
     latest_ads: "Latest Ads"
     ads_from: "Ads from {{category_name}}"
-    search_for: "Results for '{{query}}'"
+    search_for: "Search for '{{query}}'"
     created_with_success: Ad created with success
     changed_with_success: Ad updated with success
     new_ad: "+ New Ad"
@@ -42,4 +42,6 @@ en:
     one: "1 ad for {{type}}"
     other: "{{count}} ads for {{type}}"
   enter_to_search: Hit 'Enter' to Search
+  no_results_for_you: No results for your search
+  
     

@@ -16,7 +16,7 @@ pt-BR:
     please_choose_one: "Por favor, escolha uma"
     latest_ads: "Últimos"
     ads_from: "Anúncios de {{category_name}}"
-    search_for: "Resultados da busca por '{{query}}'"
+    search_for: "Busca por '{{query}}'"
     created_with_success: Anúncio criado com sucesso
     changed_with_success: Anúncio alterado com sucesso
     new_ad: "+ Novo Anúncio"
@@ -42,3 +42,4 @@ pt-BR:
     one: "1 anúncio para {{type}}"
     other: "{{count}} anúncios para {{type}}"
   enter_to_search: Pressione 'Enter' para buscar
+  no_results_for_you: Sem resultados para a sua busca
