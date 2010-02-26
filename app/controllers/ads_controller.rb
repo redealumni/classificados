@@ -5,7 +5,7 @@ class AdsController < ApplicationController
     
   # GET /ads
   def index
-    @title = I18n.t("ads.latest_ads")
+    @title = I18n.t(:latest_ads)
     
     ads_by_types(Ad.created_after(date_limit_for_ads_from(:latest)))
   end
@@ -13,7 +13,7 @@ class AdsController < ApplicationController
   # GET /:category_name
   def list_in_category
     @category = Category.find_by_permalink(params[:category_id])  
-    @title = I18n.t("ads.ads_from", :category_name => @category.name)
+    @title = I18n.t(:ads_from, :category_name => @category.name)
 
     ads_by_types(@category.ads.created_after(date_limit_for_ads_from(:category)))
     render :action => 'index'   
@@ -21,7 +21,7 @@ class AdsController < ApplicationController
   
   # GET /search
   def search
-    @title = I18n.t("ads.search_for", :query => params[:query])
+    @title = I18n.t(:search_for, :query => params[:query])
     
     ads_by_types( Ad.created_after(date_limit_for_ads_from(:search)).search(params[:query]) )
     render :action => 'index' 
@@ -53,7 +53,7 @@ class AdsController < ApplicationController
     @ad = Ad.new(params[:ad])
 
     if @ad.save
-      flash[:notice] = I18n.t("ads.created_with_success")
+      flash[:notice] = I18n.t(:ads_created_with_success)
       redirect_to(root_path(:anchor =>@ad.id))
     else
       render :action => "new" 
@@ -66,7 +66,7 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
 
     if @ad.update_attributes(params[:ad])
-      flash[:notice] = I18n.t("ads.changed_with_success") 
+      flash[:notice] = I18n.t(:ads_changed_with_success) 
       redirect_to(ads_in_category_path(@ad.category, :anchor =>@ad.id))
     else
       render :action => "edit"

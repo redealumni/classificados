@@ -12,22 +12,22 @@ pt-BR:
         photo: Foto
         category: Seção
         category_id: Seção
-  ads:
-    please_choose_one: "Por favor, escolha uma"
-    latest_ads: "Últimos"
-    ads_from: "Anúncios de {{category_name}}"
-    search_for: "Busca por '{{query}}'"
-    created_with_success: Anúncio criado com sucesso
-    changed_with_success: Anúncio alterado com sucesso
-    new_ad: "+ Novo Anúncio"
-    categories: "Seções"
-    remove: "Remover Anúncio [X]"
-    update: "Atualizar Anúncio"
-    new: "Novo Anúncio"
-  logged_in_as_admin: "Logado como administrador!"
-  logged_off_as_admin: "Permissão de administrador removida!"
-  access_denied: "Acesso Negado."
-  are_you_sure: "Você tem certeza disto?"
+  please_choose_one: "Por favor, escolha uma"
+  latest: Últimos
+  latest_ads: Últimos Anúncios
+  ads_from: "Anúncios de {{category_name}}"
+  search_for: "Busca por '{{query}}'"
+  ads_created_with_success: Anúncio criado com sucesso
+  ads_changed_with_success: Anúncio alterado com sucesso
+  new_ad_plus: "+ Novo Anúncio"
+  categories: "Seções"
+  remove_ad: "Remover Anúncio [X]"
+  update_ad: Atualizar Anúncio
+  new_ad: Novo Anúncio
+  logged_in_as_admin: Logado como administrador!
+  logged_off_as_admin: Permissão de administrador removida!
+  access_denied: Acesso Negado.
+  are_you_sure: Você tem certeza disto?
   edit: Editar
   remove: Remover
   search: Busca

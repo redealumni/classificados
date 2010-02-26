@@ -12,18 +12,18 @@ en:
         photo: Photo
         category: Category
         category_id: Category
-  ads:
-    please_choose_one: "Please, pick one"
-    latest_ads: "Latest Ads"
-    ads_from: "Ads from {{category_name}}"
-    search_for: "Search for '{{query}}'"
-    created_with_success: Ad created with success
-    changed_with_success: Ad updated with success
-    new_ad: "+ New Ad"
-    categories: Categories
-    remove: "Remove Ad [X]"
-    update: Update Ad
-    new: New Ad
+  please_choose_one: "Please, pick one"
+  latest: Latest
+  latest_ads: "Latest Ads"
+  ads_from: "Ads from {{category_name}}"
+  search_for: "Search for '{{query}}'"
+  ads_created_with_success: Ad created with success
+  ads_changed_with_success: Ad updated with success
+  new_ad_plus: "+ New Ad"
+  categories: Categories
+  remove_ad: "Remove Ad [X]"
+  update_ad: Update Ad
+  new_ad: New Ad
   logged_in_as_admin: Logged in as administrator!
   logged_off_as_admin: Not admin anymore. Close your browser.
   access_denied: Access Denied
