@@ -21,6 +21,7 @@ pt-BR:
   ads_changed_with_success: Anúncio alterado com sucesso
   new_ad_plus: "+ Novo Anúncio"
   categories: "Seções"
+  edit_categories: "Editar Seções"
   remove_ad: "Remover Anúncio [X]"
   update_ad: Atualizar Anúncio
   new_ad: Novo Anúncio
@@ -43,3 +44,13 @@ pt-BR:
     other: "{{count}} anúncios para {{type}}"
   enter_to_search: Pressione 'Enter' para buscar
   no_results_for_you: Sem resultados para a sua busca
+  admin: administrador
+  email:
+    congratulations: |
+      Parabéns, você criou um novo anúncio para {{type}} 
+      de "{{title}}", na seção {{category}}.
+    where_is_it: |
+      Ele pode ser visto em {{category_link}} por 30 dias 
+      a partir da publicação ({{start_date}}).
+    edit_link: "Para editá-lo, use o link:" 
+    

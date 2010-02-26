@@ -1,6 +1,6 @@
 <% @title = "#{t :new_ad } "%>
 
-<h1><%= t :new_ad %></h1>
+<h1><%= t @title  %></h1>
 
 <% form_for(@ad , :html => { :multipart => true }) do |f| %>
 

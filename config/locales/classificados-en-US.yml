@@ -21,6 +21,7 @@ en:
   ads_changed_with_success: Ad updated with success
   new_ad_plus: "+ New Ad"
   categories: Categories
+  edit_categories: Edit Categories
   remove_ad: "Remove Ad [X]"
   update_ad: Update Ad
   new_ad: New Ad
@@ -43,5 +44,12 @@ en:
     other: "{{count}} ads for {{type}}"
   enter_to_search: Hit 'Enter' to Search
   no_results_for_you: No results for your search
-  
-    
+  admin: admin
+  email:
+    congratulations: |
+      Congratulations, you just published an ad to 
+      {{type}} "{{title}}", in the {{category}} category.
+    where_is_it: |
+      It can be viewed at {{category_link}} for 30 days
+      after its publish date ({{start_date}}).
+    edit_link: "To edit and remove it, follow the link:"

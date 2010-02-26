@@ -30,4 +30,8 @@ class AdTest < ActiveSupport::TestCase
     assert_equal(2, results.count)
   end
   
+  test "should return a secret code" do
+    assert ads(:one).secret_code
+  end
+  
 end

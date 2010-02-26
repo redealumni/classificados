@@ -1,6 +1,6 @@
-<% @title = "#{t("update_ads")} - #{@ad.title}"%>
+<% @title = "#{t("update_ad")} - #{@ad.title}"%>
 
-<h1><%= t(:update_ads)%></h1>
+<h1><%= @title %></h1>
 
 <%= link_to t(:remove_ad), ad_path(@ad, :secret_code => @ad.secret_code), :confirm => t("are_you_sure"), :method => :delete, :style => "float:right;" %>
 

@@ -4,11 +4,11 @@
   <div class= "yui-u first">
 	<p>
     <%= f.label :kind, t("activerecord.attributes.ad.kind").titlecase %><br />
-    <%= f.select :kind, Ad::KINDS.values.sort, :default => Ad::KINDS[:buy] %>
+    <%= f.select :kind, Ad::KINDS.map{|k| [t(k), k]} %>
   </p>
   <p>
-    <%= f.label :category, t("activerecord.attributes.ad.category").titlecase %><br />
-    <%= f.collection_select :category_id, Category.all, :id, :name, {:prompt => t(:please_choose_one)} %>
+    <%= f.label :category_id, t("activerecord.attributes.ad.category").titlecase %><br />
+    <%= f.select :category_id, Category.ordered_by_name.all.map{|c| [c.name, c.id]} %>
   </p>
   <p>
     <%= f.label :title, t("activerecord.attributes.ad.title").titlecase %><br />

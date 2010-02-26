@@ -1,0 +1,28 @@
+== Classificados Online
+
+
+Permite que os visitantes leiam e postem anúncios classificados simples. Pode ser utilizada como ponto de partida para um site de classificados regionais aberto ao público, ou dentro de uma intranet, empresa, escola, etc. Possui um sistema de login simplificado para um administrador e o recurso de edição e remoção do anúncio pelo autor, através de link secreto enviado por e-mail, no momento da criação do anúncio. Os anúncios podem acompanhar foto. As categorias podem ser editadas pelo administrador numa interface simples (basicamente um scaffold). As URL geradas são "search engine friendly". 
+
+Os anúncios ficam disponível por 30 dias nas páginas das categorias e por 10 dias na página inicial.
+
+=== Motivação
+
+Esta aplicação foi desenvolvida em Ruby on Rails 2.3.5, para fins de demonstração, em algumas horas liquidas de trabalho. É ideal para fins de aprendizado, num primeiro contato com  o framework, já que o desenvolvimento desta aplicação pode ser demonstrado passo-a-passo em poucas horas.
+
+Possui menos de 250 linhas de código. Apresenta algumas noções de Active Record, Associações, Named Scopes, Helpers, AJAX, Rotas, i18n, YUI-CSS, testes, entre outros. Interface disponível em português e inglês. Tentei utilizar todas as melhores práticas de desenvolvimento com Rails atualmente (com excessão de ser completo nos testes - só existe um teste do model Ad.rb, para fins de demonstração), mantendo a simplicidade da solução ao máximo.
+
+Plugins utilizados:
+* paperclip
+* permalink_fu
+
+Críticas e sugestões são bem vindas. Mas manerem nas perguntas, pois meu tempo anda muito curto...
+
+=== Instalação e Requisitos
+
+Requer o imagemagick para manipulação das imagens (requisito do paperclip). Rails 2.3 e acima. Testada com o Ruby 1.8.7, deve funcionar no 1.9.1.
+
+Antes de colocar o site "no ar", não se esqueça de alterar a chave de segurança em config/initializers/secrets.rb, ou sua aplicação apresentará uma séria falha de segurança.
+
+Para instalar e rodar basta realizar o mesmo procedimento de qualquer aplicação Rails (edição dos arquivos de configuração, migração, script/server). Se desejar, execute "rake db:seed" para popular o banco com alguns classificados e categorias de demonstração.
+
+O login/senha do administrador é "admin" / "admin", pode ser alterado diretamente em app/controllers/admin_controller.rb. Para fazer o login como administrador, acesse o URL http://localhost:3000/admin.

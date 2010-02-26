@@ -103,9 +103,9 @@ class AdsController < ApplicationController
 
   def ads_by_types(scoped_ads)
     scoped_ads = scoped_ads.ordered_by_creation
-    @selling = scoped_ads.of_kind Ad::KINDS[:sell]
-    @buying = scoped_ads.of_kind Ad::KINDS[:buy] 
-    @exchanging = scoped_ads.of_kind Ad::KINDS[:exchange]
+    @selling = scoped_ads.of_kind :sell
+    @buying = scoped_ads.of_kind :buy 
+    @exchanging = scoped_ads.of_kind :exchange
   end
 
 end

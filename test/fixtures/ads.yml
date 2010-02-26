@@ -1,13 +1,34 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
+one:
+  title: asdfasdfasdfasdfasdfasdfasdfasdfa
+  body:  fdasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfsadfasdf
+  email: joao@joao.com
+  phone: 21 23232332
+  kind: sell
+  category: one
+
+two:
+  title: asdfasdfasdfasdfasdfas
+  body: asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfadsfasdfasdfasdfasd
+  email: jose@jose.com
+  phone: 12 31232131
+  kind: sell
+  category: one
+
 search_one:
   title: Ofereço empregos
   body: Este anúncio fala de rails e de notebook
   email: joao@joao.com
   phone: 21 23232332
+  kind: sell
+  category: one
 
 search_two:
   title: Ofereço cursos
   body: Este anúncio fala de java e de NOTEBOOK
   email: jose@jose.com
   phone: 12 31232131
+  kind: sell
+  category: one
+

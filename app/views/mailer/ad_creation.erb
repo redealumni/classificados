@@ -1,6 +1,9 @@
-Parabéns, você criou um novo anúncio com o título <%= @ad.title%>, na seção <%= @ad.category.name%>. 
+<%= t "email.congratulations", :title => @ad.title, :type => t(@ad.type), :category => @ad.category.name %>
 
-Ele pode ser visto em <%= ads_in_category_url @ad.category, :anchor => @ad.id %> por 30 dias a partir de <%= I18n.l @ad.created_at, :format => :short %>.
+<%= t "email.where_is_it", 
+  :category_link => ads_in_category_url(@ad.category, :anchor => @ad.id), 
+  :start_date => l(@ad.created_at, :format => :short)
+%>
 
-Para editá-lo, use o link: 
+<%= t "email.edit_link" %>
 <%= email_edit_ad_url @ad, :secret_code => @ad.secret_code %>
