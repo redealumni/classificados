@@ -2,13 +2,13 @@
 
 <h1><%= @title %></h1>
 
-<%= link_to t(:remove_ad), ad_path(@ad, :secret_code => @ad.secret_code), :confirm => t("are_you_sure"), :method => :delete, :style => "float:right;" %>
+<%= link_to t(:remove_ad), ad_path(@ad, :secret_code => params[:secret_code]), :confirm => t("are_you_sure"), :method => :delete, :style => "float:right;" %>
 
 <% form_for(@ad , :html => { :multipart => true }) do |f| %>
 
   <%= render :partial => 'form_fields', :locals =>{:f => f} %>
   
-  <%= hidden_field_tag :secret_code, @ad.secret_code %>
+  <%= hidden_field_tag :secret_code, params[:secret_code] %>
   <br/>
   <p>
     <%= f.submit 'Atualizar' %>
