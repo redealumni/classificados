@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Permalink</th>
     <th>Entries</th>
     <th>Photo</th>
   </tr>
@@ -10,6 +11,7 @@
 <% @categories.each do |category| %>
   <tr>
     <td><%=h category.name %></td>
+    <td><%=h category.permalink %></td>
     <td><%= category.ads.count %></td>
     <td><%= image_tag  category.photo.url(:tiny) %></td>
     <td><%= link_to 'Show', category %></td>
