@@ -2,6 +2,8 @@
 
 one:
   name: One
+  permalink: one
 
 two:
   name: Another
+  permalink: one
