@@ -44,7 +44,7 @@
           </div>
         
           <div id="search_box" class = "yui-u">
-            <% form_tag search_path, :method => :get do %>
+            <% form_tag search_ads_path, :method => :get do %>
               <%= text_field_tag(:query, "", :autocomplete => "off" )%>
               <%= submit_tag(t("search"))%>
               <%= observe_field :query, 
