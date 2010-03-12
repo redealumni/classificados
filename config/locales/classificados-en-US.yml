@@ -1,4 +1,5 @@
 en:
+  access_denied: Access Denied
   activerecord:
     models:
       ad: "Ad" # o model do active record
@@ -13,43 +14,42 @@ en:
         category: Category
         category_id: Category
   please_choose_one: "Please, pick one"
-  latest: Latest
-  latest_ads: "Latest Ads"
-  ads_from: "Ads from {{category_name}}"
-  search_for: "Search for '{{query}}'"
-  ads_created_with_success: Ad created with success
-  ads_changed_with_success: Ad updated with success
-  new_ad_plus: "+ New Ad"
-  categories: Categories
-  edit_categories: Edit Categories
-  remove_ad: "Remove Ad [X]"
-  update_ad: Update Ad
-  new_ad: New Ad
-  logged_in_as_admin: Logged in as administrator!
-  logged_off_as_admin: Not admin anymore. Close your browser.
-  access_denied: Access Denied
-  are_you_sure: "Are you sure?"
-  edit: Edit
-  remove: Remove
-  search: Search
-  logoff: Logoff
   admin: Administrator
-  sell: sell
-  buy: buy
-  exchange: exchange
-  ago: ago
-  number_of_ads_by_type: 
-    zero:
-    one: "1 ad for {{type}}"
-    other: "{{count}} ads for {{type}}"
-  enter_to_search: Hit 'Enter' to Search
-  no_results_for_you: No results for your search
   admin: admin
+  ads_changed_with_success: Ad updated with success
+  ads_created_with_success: Ad created with success
+  ads_from: "Ads from {{category_name}}"
+  ago: ago
+  are_you_sure: "Are you sure?"
+  buy: buy
+  categories: Categories
+  edit: Edit
+  edit_categories: Edit Categories
   email:
     congratulations: |
       Congratulations, you just published an ad to 
       {{type}} "{{title}}", in the {{category}} category.
+    edit_link: "To edit and remove it, follow the link:"
     where_is_it: |
       It can be viewed at {{category_link}} for 30 days
       after its publish date ({{start_date}}).
-    edit_link: "To edit and remove it, follow the link:"
+  enter_to_search: Hit 'Enter' to Search
+  exchange: exchange
+  latest: Latest
+  latest_ads: "Latest Ads"
+  logged_in_as_admin: Logged in as administrator!
+  logged_off_as_admin: Not admin anymore. Close your browser.
+  logoff: Logoff
+  new_ad: New Ad
+  new_ad_plus: "+ New Ad"
+  no_results_for_you: No results for your search
+  number_of_ads_by_type: 
+    one: "1 ad for {{type}}"
+    other: "{{count}} ads for {{type}}"
+    zero:
+  remove: Remove
+  remove_ad: "Remove Ad [X]"
+  search: Search
+  search_for: "Search for '{{query}}'"
+  sell: sell
+  update_ad: Update Ad

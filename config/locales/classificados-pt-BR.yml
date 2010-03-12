@@ -1,4 +1,5 @@
 pt-BR:
+  access_denied: Acesso Negado.
   activerecord:
     models:
       ad: "Classificado" # o model do active record
@@ -13,44 +14,42 @@ pt-BR:
         category: Seção
         category_id: Seção
   please_choose_one: "Por favor, escolha uma"
-  latest: Últimos
-  latest_ads: Últimos Anúncios
-  ads_from: "Anúncios de {{category_name}}"
-  search_for: "Busca por '{{query}}'"
-  ads_created_with_success: Anúncio criado com sucesso
-  ads_changed_with_success: Anúncio alterado com sucesso
-  new_ad_plus: "+ Novo Anúncio"
-  categories: "Seções"
-  edit_categories: "Editar Seções"
-  remove_ad: "Remover Anúncio [X]"
-  update_ad: Atualizar Anúncio
-  new_ad: Novo Anúncio
-  logged_in_as_admin: Logado como administrador!
-  logged_off_as_admin: Permissão de administrador removida!
-  access_denied: Acesso Negado.
-  are_you_sure: Você tem certeza disto?
-  edit: Editar
-  remove: Remover
-  search: Busca
-  logoff: Deslogar
   admin: Administrador
-  sell: venda
-  buy: compra
-  exchange: troca
-  ago: atrás
-  number_of_ads_by_type: 
-    zero: 
-    one: "1 anúncio para {{type}}"
-    other: "{{count}} anúncios para {{type}}"
-  enter_to_search: Pressione 'Enter' para buscar
-  no_results_for_you: Sem resultados para a sua busca
   admin: administrador
+  ads_changed_with_success: Anúncio alterado com sucesso
+  ads_created_with_success: Anúncio criado com sucesso
+  ads_from: "Anúncios de {{category_name}}"
+  ago: atrás
+  are_you_sure: Você tem certeza disto?
+  buy: compra
+  categories: "Seções"
+  edit: Editar
+  edit_categories: "Editar Seções"
   email:
     congratulations: |
       Parabéns, você criou um novo anúncio para {{type}} 
       de "{{title}}", na seção {{category}}.
+    edit_link: "Para editá-lo, use o link:" 
     where_is_it: |
       Ele pode ser visto em {{category_link}} por 30 dias 
       a partir da publicação ({{start_date}}).
-    edit_link: "Para editá-lo, use o link:" 
-    
+  enter_to_search: Pressione 'Enter' para buscar
+  exchange: troca
+  latest: Últimos
+  latest_ads: Últimos Anúncios
+  logged_in_as_admin: Logado como administrador!
+  logged_off_as_admin: Permissão de administrador removida!
+  logoff: Deslogar
+  new_ad: Novo Anúncio
+  new_ad_plus: "+ Novo Anúncio"
+  no_results_for_you: Sem resultados para a sua busca
+  number_of_ads_by_type: 
+    one: "1 anúncio para {{type}}"
+    other: "{{count}} anúncios para {{type}}"
+    zero: 
+  remove: Remover
+  remove_ad: "Remover Anúncio [X]"
+  search: Busca
+  search_for: "Busca por '{{query}}'"
+  sell: venda
+  update_ad: Atualizar Anúncio
